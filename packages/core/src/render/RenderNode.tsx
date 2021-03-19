@@ -26,13 +26,7 @@ const Render = (otherProps: any) => {
     let children = props.children;
 
     if (nodes && nodes.length > 0) {
-      children = (
-        <React.Fragment>
-          {nodes.map((id: NodeId) => (
-            <NodeElement id={id} key={id} />
-          ))}
-        </React.Fragment>
-      );
+      children = nodes.map((id: NodeId) => <NodeElement id={id} key={id} />);
     }
 
     const render = React.createElement(type, props, children);
